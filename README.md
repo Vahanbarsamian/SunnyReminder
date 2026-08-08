@@ -5,6 +5,11 @@
 ![Version](https://img.shields.io/badge/version-2.6-orange)
 ![Platform](https://img.shields.io/badge/platform-Android-brightgreen)
 
+## 📥 Téléchargement
+
+Vous pouvez télécharger l'APK directement pour tester l'application :  
+[**Télécharger Sunny Reminder APK (v2.6)**](https://mega.nz/file/fzZ2nCqT#cs-3FWNbPW_VcAiA7yNK5IFUZmNW8dDI2xSVWfFUpTI)
+
 ## 🌟 Concept
 
 L'application surveille votre agenda (Google Calendar et autres) et déclenche une scène de plage interactive à chaque échéance. Un avion de tourisme survole alors le paysage en traînant une banderole avec le titre de votre rendez-vous.
