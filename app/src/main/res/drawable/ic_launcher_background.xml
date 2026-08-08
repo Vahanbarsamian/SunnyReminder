@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Sky -->
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M0,0h108v60h-108z" />
+    <!-- Sand -->
+    <path
+        android:fillColor="#F4A460"
+        android:pathData="M0,60h108v48h-108z" />
+    <!-- Simple Wave line -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M0,60 Q27,55 54,60 T108,60" />
+</vector>

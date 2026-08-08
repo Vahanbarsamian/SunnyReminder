@@ -1,0 +1,27 @@
+# Tasks - Sunny Reminder Implementation
+
+- [x] Configuration & Permissions
+    - [x] Update `AndroidManifest.xml` with permissions and activities
+- [x] Alarm Logic
+    - [x] Implement `AlarmScheduler.kt`
+    - [x] Implement `AlarmReceiver.kt`
+- [x] UI & Animation (Phase 1)
+    - [x] Create `BeachScene.kt` (Canvas animations)
+    - [x] Implement interaction logic (Sun tap, Vendor tap)
+- [x] Reminder Activity (Phase 1)
+    - [x] Implement `ReminderActivity.kt` with Lockscreen support
+    - [x] Add sound management (`MediaPlayer`)
+- [x] UI & Animation Enhancements (Phase 2)
+    - [x] Add `windAnim` for parasol sway in `BeachScene.kt`
+    - [x] Implement `drawTowel()` in `BeachScene.kt`
+    - [x] Add `onTowelClick` callback and click detection in `BeachScene.kt`
+- [x] Interaction Logic (Phase 2)
+    - [x] Implement calendar intent in `ReminderActivity.kt`
+- [x] UI & Animation Surprises (Phase 3)
+    - [x] Add `sunPulse` animation in `BeachScene.kt`
+    - [x] Implement Crab surprise (state, animation, `drawCrab`) in `BeachScene.kt`
+    - [x] Implement Sandcastle surprise (long press, `drawSandCastle`) in `BeachScene.kt`
+- [x] Integration
+    - [x] Update `MainActivity.kt` to allow testing the alarm
+- [x] Verification
+    - [x] Build and Manual Test

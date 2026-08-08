@@ -1,0 +1,41 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Sun Body -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M54,24c16.57,0 30,13.43 30,30s-13.43,30 -30,30 -30,-13.43 -30,-30 13.43,-30 30,-30z" />
+
+    <!-- Sunglasses - Left Lens -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M38,48h12c1,0 2,1 2,2v6c0,2 -2,4 -4,4h-6c-2,0 -4,-2 -4,-4v-6c0,-1 1,-2 2,-2z" />
+
+    <!-- Sunglasses - Right Lens -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M58,48h12c1,0 2,1 2,2v6c0,2 -2,4 -4,4h-6c-2,0 -4,-2 -4,-4v-6c0,-1 1,-2 2,-2z" />
+
+    <!-- Sunglasses - Bridge -->
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:pathData="M50,52h8" />
+
+    <!-- Sunglasses - Arms (tiny) -->
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="1.5"
+        android:pathData="M34,50l-4,2 M74,50l4,2" />
+
+    <!-- Smile -->
+    <path
+        android:strokeColor="#333333"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M44,68Q54,76 64,68" />
+
+</vector>
