@@ -2,13 +2,13 @@
 
 **Sunny Reminder** est une application Android innovante qui transforme vos rappels de calendrier en une expérience immersive et apaisante. Fini les notifications ennuyeuses, place à une plage privée animée directement sur votre écran !
 
-![Version](https://img.shields.io/badge/version-2.6-orange)
+![Version](https://img.shields.io/badge/version-2.7-orange)
 ![Platform](https://img.shields.io/badge/platform-Android-brightgreen)
 
 ## 📥 Téléchargement
 
 Vous pouvez télécharger l'APK directement pour tester l'application :  
-[**Télécharger Sunny Reminder APK (v2.6)**](https://mega.nz/file/f3wiVKRI#r8KI9DfNlOVjiVx9hh1CE2jC-RhaOeQW76xgDm81Bhs)
+[**Télécharger Sunny Reminder APK (v2.7)**](https://mega.nz/file/y7hxkKbQ#RbokAyfCYa5GlYvtWJr3E5mlxOczJiXfrDHPuA1D16E)
 
 ## 🌟 Concept
 
@@ -53,4 +53,4 @@ L'application surveille votre agenda (Google Calendar et autres) et déclenche u
 
 ---
 *Créé par : [vahanbarsamian@free.fr](mailto:vahanbarsamian@free.fr)*  
-*Version 2.6 - Sunny Reminder*
+*Version 2.7 - Sunny Reminder*
