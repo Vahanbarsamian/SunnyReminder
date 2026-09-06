@@ -335,12 +335,18 @@ fun HomeScreen(
                     shape = RoundedCornerShape(16.dp),
                     enabled = countdownValue == -1
                 ) {
-                    val text = when (countdownValue) {
-                        -1 -> "Lancer le test (5s)"
-                        0 -> "ignition :)"
-                        else -> "$countdownValue..."
+                    if (countdownValue == -1) {
+                        Text("Lancer le test (5s)", fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                    } else if (countdownValue == 0) {
+                        Text("ignition 🚀", fontSize = 20.sp, fontWeight = FontWeight.ExtraBold, color = Color.Yellow)
+                    } else {
+                        Text(
+                            text = "$countdownValue...",
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Black,
+                            color = Color(0xFFFFEB3B) // Sunny Yellow
+                        )
                     }
-                    Text(text, fontSize = 18.sp, fontWeight = FontWeight.Bold)
                 }
             }
         }
