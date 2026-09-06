@@ -49,6 +49,7 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.vahan.sunnyreminder.ui.BeachScene
 import com.vahan.sunnyreminder.ui.theme.SunnyReminderTheme
+import kotlinx.coroutines.delay
 import java.util.concurrent.TimeUnit
 
 class MainActivity : ComponentActivity() {
@@ -201,6 +202,17 @@ fun HomeScreen(
 ) {
     val context = LocalContext.current
     val scheduler = remember { AlarmScheduler(context) }
+    var countdownValue by remember { mutableIntStateOf(-1) }
+
+    LaunchedEffect(countdownValue) {
+        if (countdownValue > 0) {
+            delay(1000)
+            countdownValue--
+        } else if (countdownValue == 0) {
+            delay(1000)
+            countdownValue = -1
+        }
+    }
     
     Column(modifier = Modifier.fillMaxSize()) {
         Box(modifier = Modifier.weight(1f).fillMaxWidth()) {
@@ -313,13 +325,22 @@ fun HomeScreen(
                 Spacer(modifier = Modifier.height(24.dp))
                 Button(
                     onClick = {
-                        val time = System.currentTimeMillis() + 5000
-                        scheduler.schedule(time, "C'est l'heure de la détente !")
+                        if (countdownValue == -1) {
+                            countdownValue = 5
+                            val time = System.currentTimeMillis() + 5000
+                            scheduler.schedule(time, "C'est l'heure de la détente !")
+                        }
                     },
                     modifier = Modifier.fillMaxWidth().height(56.dp),
-                    shape = RoundedCornerShape(16.dp)
+                    shape = RoundedCornerShape(16.dp),
+                    enabled = countdownValue == -1
                 ) {
-                    Text("Lancer le test (5s)", fontSize = 16.sp)
+                    val text = when (countdownValue) {
+                        -1 -> "Lancer le test (5s)"
+                        0 -> "ignition :)"
+                        else -> "$countdownValue..."
+                    }
+                    Text(text, fontSize = 18.sp, fontWeight = FontWeight.Bold)
                 }
             }
         }
@@ -766,11 +787,13 @@ fun HelpDialog(onDismiss: () -> Unit) {
         title = { Text("Secrets de la Plage 🏖️", fontWeight = FontWeight.Bold) },
         text = {
             Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-                HelpItem("☀️ Soleil", "Un simple appui dessus permet de fermer le rappel (Bouton OK).")
+                HelpItem("☀️ Soleil", "Sert de raccourci pour fermer le rappel s'il fait beau.")
+                HelpItem("ℹ️ Info", "Affiche la météo, l'heure, et contient le bouton (X) pour quitter l'appli.")
                 HelpItem("🏖️ Serviette", "Un appui dessus ouvre votre agenda et réveille le petit crabe 🦀.")
                 HelpItem("🏰 Sable", "Faites un appui long n'importe où sur le sable pour construire un château.")
-                HelpItem("🍦 Glaces", "Cliquez sur le stand pour programmer un futur rappel gourmand.")
+                HelpItem("🍦 Glaces", "Cliquez sur le stand pour reporter le rappel (Snooze).")
                 HelpItem("🛩️ Avions", "Ils défilent en parade si vous avez plusieurs rendez-vous prévus.")
+                HelpItem("🚀 Test", "Lancement avec compte à rebours visible (v2.8).")
             }
         },
         confirmButton = {

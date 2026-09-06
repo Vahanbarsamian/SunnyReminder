@@ -82,8 +82,18 @@ fun BeachScene(
 
                     val sunCenter = Offset(size.width * 0.8f, size.height * 0.15f)
                     val sunRadius = 60.dp.toPx()
-                    if ((offset - sunCenter).getDistance() < sunRadius) {
+                    // If sunny, sun still works as a shortcut, otherwise use Info Panel Exit
+                    if (weather == WeatherState.SUNNY && (offset - sunCenter).getDistance() < sunRadius) {
                         onSunClick()
+                    }
+
+                    // Check for Exit Button within Info Panel
+                    if (showInfoPanel) {
+                        val exitBtnX = 20.dp.toPx() + 260.dp.toPx() - 30.dp.toPx()
+                        val exitBtnY = 60.dp.toPx() + 30.dp.toPx()
+                        if ((offset - Offset(exitBtnX, exitBtnY)).getDistance() < 25.dp.toPx()) {
+                            onSunClick()
+                        }
                     }
 
                     val vendorOffset = Offset(size.width * 0.12f, size.height * 0.76f)
@@ -134,7 +144,7 @@ fun BeachScene(
 
         val sandColor = when(weather) {
             WeatherState.SUNNY -> Color(0xFFF4A460)
-            else -> Color(0xFFC2B280).copy(alpha = 0.8f)
+            else -> Color(0xFFD2B48C)
         }
 
         drawRect(brush = Brush.verticalGradient(skyColors), size = size)
@@ -279,6 +289,13 @@ private fun DrawScope.drawInfoPanelPro(time: Long, textMeasurer: TextMeasurer) {
     dText(timeStr, 12.dp.toPx(), 24f, true)
     dText(dateStr, 42.dp.toPx(), 14f)
     dText(extraInfoStr, 68.dp.toPx(), 12f)
+
+    // Exit Button (X) in top right of panel
+    val ex = x + w - 30.dp.toPx()
+    val ey = y + 30.dp.toPx()
+    drawCircle(Color.Red.copy(alpha = 0.6f), radius = 15.dp.toPx(), center = Offset(ex, ey))
+    drawLine(Color.White, Offset(ex - 6.dp.toPx(), ey - 6.dp.toPx()), Offset(ex + 6.dp.toPx(), ey + 6.dp.toPx()), 2.dp.toPx())
+    drawLine(Color.White, Offset(ex + 6.dp.toPx(), ey - 6.dp.toPx()), Offset(ex - 6.dp.toPx(), ey + 6.dp.toPx()), 2.dp.toPx())
 }
 
 private fun DrawScope.drawSunPro(pulse: Float, parallaxX: Float) {

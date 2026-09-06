@@ -1,33 +1,41 @@
-# Plan d'action : Création du Repository GitHub 🚀
+# Plan d'Action - Bouton de Sortie dans le Panneau Info & Version 2.7 🏖️🚪📊
 
-Ce plan détaille les étapes pour initialiser Git localement et lier votre projet Sunny Reminder à un nouveau repository sur votre compte GitHub.
+Ce plan déplace le mécanisme de fermeture de l'alerte vers le panneau d'informations pour une meilleure ergonomie par tous les temps, et met à jour l'identité du logiciel.
 
-## Étapes à suivre par l'utilisateur
+## Modifications Proposées
 
-> [!IMPORTANT]
-> Avant de continuer, vous devez créer le repository sur GitHub :
-> 1. Connectez-vous à votre compte [GitHub](https://github.com).
-> 2. Cliquez sur **"New"** pour créer un nouveau repository.
-> 3. Nommez-le `SunnyReminder`.
-> 4. Gardez-le **Public** ou **Privé** selon votre choix.
-> 5. **NE PAS** cocher "Initialize this repository with a README, .gitignore, or license" (car nous les avons déjà).
-> 6. Cliquez sur **"Create repository"**.
-> 7. Copiez l'URL HTTPS (ex: `https://github.com/votre-nom/SunnyReminder.git`).
+### 1. Interface de Sortie (BeachScene)
 
-## Modifications Proposées (Côté IDE)
+#### [MODIFY] [BeachScene.kt](file:///C:/Users/vahan/AndroidStudioProjects/Sunnyreminder/app/src/main/java/com/vahan/sunnyreminder/ui/BeachScene.kt)
+- **Bouton de Sortie dans Info** :
+    - Ajouter une icône **"X"** (croix de fermeture) ou un bouton **"Quitter"** stylisé à l'intérieur du panneau d'informations (celui qui s'ouvre avec le bouton **(i)**).
+    - Modifier la détection du clic (`onTap`) pour que, si le panneau d'infos est ouvert, un appui sur cette croix déclenche la sortie (`onSunClick`).
+- **Retrait du Clic Soleil** : Comme demandé, le bouton principal de sortie devient celui du panneau Info, évitant les problèmes de visibilité du soleil selon la météo.
 
-### 1. Initialisation Git
-- Exécuter `git init` pour transformer le dossier en repository local.
-- Vérifier que le fichier `.gitignore` est bien configuré pour ne pas envoyer les fichiers inutiles (build, clés privées).
+### 2. Guide & Aide (MainActivity)
 
-### 2. Premier Commit
-- Ajouter tous les fichiers du projet.
-- Créer le premier commit : `"Initial commit - Sunny Reminder v2.6 with Pro Design"`.
+#### [MODIFY] [MainActivity.kt](file:///C:/Users/vahan/AndroidStudioProjects/Sunnyreminder/app/src/main/java/com/vahan/sunnyreminder/MainActivity.kt)
+- **Dialogue d'Aide** : Mettre à jour l'explication pour le "Soleil" et l' "Info". Préciser que la sortie se fait désormais via le panneau d'informations.
+- **Version** : L'affichage de la version se mettra à jour automatiquement via le Gradle.
 
-### 3. Liaison avec GitHub
-- Une fois que vous m'aurez fourni l'URL, je lierai le repository local au remote GitHub.
-- Envoyer le code sur la branche principale (`main`).
+### 3. Métadonnées & Documentation
 
-## Vérification
-- Vérifier que le statut Git est propre après le commit.
-- Confirmer la liaison avec l'URL distante.
+#### [MODIFY] [build.gradle.kts](file:///C:/Users/vahan/AndroidStudioProjects/Sunnyreminder/app/build.gradle.kts)
+- Passer la version à **2.7**.
+
+#### [MODIFY] [README.md](file:///C:/Users/vahan/AndroidStudioProjects/Sunnyreminder/README.md)
+- Mettre à jour le numéro de version et la description du fonctionnement du bouton de sortie.
+
+## Vérification Plan
+
+### Tests Manuels
+1. **Sortie de l'Alerte** :
+    - Lancer un test (5s).
+    - Cliquer sur **(i)** en haut à gauche.
+    - Cliquer sur la nouvelle croix **(X)** dans le panneau.
+    - Vérifier que l'alerte se ferme bien.
+2. **Vérification Version** :
+    - Aller dans les réglages (Engrenage).
+    - Vérifier que la version affichée est bien **2.7**.
+3. **Aide** :
+    - Ouvrir le menu d'aide (?) et vérifier que les nouvelles instructions sont claires.

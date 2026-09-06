@@ -1,13 +1,11 @@
-# Tasks - Signature & Panneau d'Infos 🏖️📧📊
+# Tasks - Repository GitHub & Finalisation 🚀📂
 
-- [ ] **Data & Logic**
-    - [ ] Ajouter la température et la vitesse du vent dans `WeatherManager.kt`
-- [ ] **Signature**
-    - [ ] Ajouter la section "À propos" avec le mail et la version dans `MainActivity.kt`
-- [ ] **Panneau d'Infos (BeachScene)**
-    - [ ] Ajouter l'icône Info (bouton cliquable)
-    - [ ] Implémenter l'affichage de la Date, Heure, Température et Vent
-    - [ ] Créer le design "Frosted Glass" (verre poli) pour le panneau
-- [ ] **Vérification**
-    - [ ] Re-build de l'APK finale
-    - [ ] Test du panneau d'infos sur l'accueil
+- [x] **Repository GitHub**
+    - [x] Initialiser Git localement
+    - [x] Créer le premier commit (v2.6)
+    - [x] Lier le remote origin (GitHub)
+    - [x] Pousser le code sur la branche `main`
+- [x] **Derniers Détails**
+    - [x] Signature vahanbarsamian@free.fr
+    - [x] Panneau d'Infos (Semaine, Temp, Vent)
+    - [x] Alerte Porte-Voix avec option "Ne plus rappeler"
