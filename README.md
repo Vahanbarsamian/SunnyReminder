@@ -8,7 +8,7 @@
 ## 📥 Téléchargement
 
 Vous pouvez télécharger l'APK directement pour tester l'application :  
-[**Télécharger Sunny Reminder APK (v2.9)**](https://mega.nz/file/y7hxkKbQ#RbokAyfCYa5GlYvtWJr3E5mlxOczJiXfrDHPuA1D16E)
+[**Télécharger Sunny Reminder APK (v2.9)**](https://mega.nz/file/yuR2hB7K#iMZxoqG7nf0b1Lx3N0_CMvW-xF7ZJf_CDl4QMuYEfwc)
 
 ## 🌟 Concept
 
